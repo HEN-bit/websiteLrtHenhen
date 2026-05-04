@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Akun</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+        <div class="logo">🚆 LRT Ticket</div>
+
+        <div class="nav-right">
+
+            <div id="userBox" class="userBox">👤</div>
+
+            <div id="menuIcon" onclick="toggleMenu()">☰</div>
+
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="regrister.html">Daftar</a>
+
+        </div>
+
+    </nav>
+
+    <section class="booking">
+
+        <h1>Daftar Akun</h1>
+
+        <div class="booking-box">
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Masukkan email">
+
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Minimal 6 karakter">
+
+            <button onclick="registerUser()">Daftar</button>
+
+            <p>Sudah punya akun? <a href="login.html">Login</a></p>
+
+        </div>
+
+    </section>
+
+    <script src="java.js"></script>
+
+</body>
+
+</html>

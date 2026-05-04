@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cek Transaksi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+     <nav class="navbar">
+
+        <div class="logo">🚆 LRT Ticket</div>
+
+        <div class="nav-right">
+            <div id="userBox" class="userBox" onclick="toggleUserMenu(event)"></div>
+
+            <div id="userDropdown" class="user-dropdown">
+                <div id="dropdownEmail" class="dropdown-header"></div>
+                <a href="dashboard.html">📊 Dashboard</a>
+                <a href="#" onclick="logoutUser()">🚪 Logout</a>
+            </div>
+            <div id="menuIcon" onclick="toggleMenu()">☰</div>
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="booking.html" onclick="closeMenu()">Pesan Tiket</a>
+            <a href="cek.html" onclick="closeMenu()">Cek Transaksi</a>
+            <a href="dashboard.html" onclick="closeMenu()">Dashboard</a>
+            <a href="tiket.html" onclick="closeMenu()">Tiket Saya</a>
+            <a href="scan.html" onclick="closeMenu()">Scan Tiket</a>
+            <a href="about.html" onclick="closeMenu()">About</a>
+            <a href="login.html" onclick="closeMenu()">Login</a>
+            <a href="regrister.html" onclick="closeMenu()">Daftar</a>
+            <a href="cs.html" onclick="closeMenu()">Costumer Service</a>
+        </div>
+
+    </nav>
+    
+    <h1>Cek Transaksi</h1>
+
+    <input type="text" id="cekId" placeholder="Masukkan ID Transaksi">
+
+    <button onclick="cekTransaksi()">Cek</button>
+
+    <div id="hasilCek"></div>
+
+    <script src="java.js"></script>
+
+</body>
+
+</html>

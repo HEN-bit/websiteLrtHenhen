@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pesan Tiket LRT</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">🚆 LRT Ticket</div>
+
+        <div class="nav-right">
+            <div id="userBox" class="userBox" onclick="toggleUserMenu(event)"></div>
+
+            <div id="userDropdown" class="user-dropdown">
+                <div id="dropdownEmail" class="dropdown-header"></div>
+                <a href="dashboard.html">📊 Dashboard</a>
+                <a href="#" onclick="logoutUser()">🚪 Logout</a>
+            </div>
+            <div id="menuIcon" onclick="toggleMenu()">☰</div>
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="booking.html" onclick="closeMenu()">Pesan Tiket</a>
+            <a href="cek.html" onclick="closeMenu()">Cek Transaksi</a>
+            <a href="dashboard.html" onclick="closeMenu()">Dashboard</a>
+            <a href="tiket.html" onclick="closeMenu()">Tiket Saya</a>
+            <a href="scan.html" onclick="closeMenu()">Scan Tiket</a>
+            <a href="about.html" onclick="closeMenu()">About</a>
+            <a href="login.html" onclick="closeMenu()">Login</a>
+            <a href="regrister.html" onclick="closeMenu()">Daftar</a>
+            <a href="cs.html" onclick="closeMenu()">Costumer Service</a>
+        </div>
+
+    </nav>
+
+    <section class="booking">
+
+        <div class="booking-container">
+
+            <!-- GAMBAR RUTE -->
+            <div class="route-image">
+                <img id="petaRute" src="rute-lrt.jpeg" alt="Rute LRT">
+                <p class="routeText" id="routeText">Pilih stasiun untuk melihat rute perjalan</p>
+            </div>
+
+            <!-- FORM BOOKING -->
+            <div class="booking-form">
+
+                <h1>🚆 Pesan Tiket LRT</h1>
+
+                <div class="booking-box">
+
+                    <label>Stasiun Asal</label>
+                    <select id="asal" onchange="updateRute()">
+                        <option>Bandara</option>
+                        <option>Asrama Haji</option>
+                        <option>Punti Kayu</option>
+                        <option>RSUD</option>
+                        <option>Garuda Dempo</option>
+                        <option>Demang</option>
+                        <option>Bumi Sriwijaya</option>
+                        <option>Dishub</option>
+                        <option>Cinde</option>
+                        <option>Ampera</option>
+                        <option>Polresta</option>
+                        <option>Jakabaring</option>
+                    </select>
+
+                    <label>Stasiun Tujuan</label>
+                    <select id="tujuan" onchange="updateRute()">
+                        <option>Bandara</option>
+                        <option>Asrama Haji</option>
+                        <option>Punti Kayu</option>
+                        <option>RSUD</option>
+                        <option>Garuda Dempo</option>
+                        <option>Demang</option>
+                        <option>Bumi Sriwijaya</option>
+                        <option>Dishub</option>
+                        <option>Cinde</option>
+                        <option>Ampera</option>
+                        <option>Polresta</option>
+                        <option>Jakabaring</option>
+                    </select>
+
+                    <label>Jumlah Tiket</label>
+                    <input type="number" id="jumlah" value="1" min="1" oninput="hitungTotal()">
+
+                    <p class="hargaInfo">Harga Tiket : Rp 10.000 / orang</p>
+
+                    <p id="totalHarga">Total Harga : Rp 10.000</p>
+
+                    <label>Metode Pembayaran</label>
+                    <select id="metode">
+                        <option>QRIS</option>
+                        <option>DANA</option>
+                        <option>Shopeepay</option>
+                        <option>Gopay</option>
+                        <option>OVO</option>
+                        <option>Bank BCA</option>
+                        <option>Bank BRI</option>
+                    </select>
+
+                    <button onclick="pesanTiket()">Pesan Tiket</button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+    <script src="java.js"></script>
+
+</body>
+
+</html>

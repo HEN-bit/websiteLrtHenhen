@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scan Tiket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">🚆 LRT Ticket</div>
+
+        <div class="nav-right">
+
+            <div id="userBox" class="userBox" onclick="toggleUserMenu(event)"></div>
+
+            <div id="userDropdown" class="user-dropdown">
+                <div id="dropdownEmail" class="dropdown-header"></div>
+                <a href="dashboard.html">📊 Dashboard</a>
+                <a href="#" onclick="logoutUser()">🚪 Logout</a>
+            </div>
+
+            <button onclick="toggleDarkMode()" class="dark-btn">🌙</button>
+
+            <div id="menuIcon" onclick="toggleMenu()">☰</div>
+
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="booking.html" onclick="closeMenu()">Pesan Tiket</a>
+            <a href="cek.html" onclick="closeMenu()">Cek Transaksi</a>
+            <a href="dashboard.html" onclick="closeMenu()">Dashboard</a>
+            <a href="tiket.html" onclick="closeMenu()">Tiket Saya</a>
+            <a href="scan.html" onclick="closeMenu()">Scan Tiket</a>
+            <a href="about.html" onclick="closeMenu()">About</a>
+            <a href="login.html" onclick="closeMenu()">Login</a>
+            <a href="regrister.html" onclick="closeMenu()">Daftar</a>
+            <a href="cs.html" onclick="closeMenu()">Costumer Service</a>
+        </div>
+
+    </nav>
+
+    <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <h1 style="text-align:center;">📷 Scan Tiket</h1>
+
+    <div style="display:flex; justify-content:center; margin-top:20px;">
+        <div id="reader" style="width:300px;"></div>
+    </div>
+
+    <div id="hasilScan" style="text-align:center; margin-top:20px;"></div>
+
+    <!-- LIBRARY QR -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+    <script src="java.js"></script>
+
+    <script>
+        startScanner();
+    </script>
+
+</body>
+
+</html>

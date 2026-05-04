@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LRT Palembang Ticket</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">🚆 LRT Ticket</div>
+
+        <div class="nav-right">
+
+            <div id="userBox" class="userBox" onclick="toggleUserMenu(event)"></div>
+
+            <div id="userDropdown" class="user-dropdown">
+                <div id="dropdownEmail" class="dropdown-header"></div>
+                <a href="dashboard.html">📊 Dashboard</a>
+                <a href="#" onclick="logoutUser()">🚪 Logout</a>
+            </div>
+
+            <button onclick="toggleDarkMode()" class="dark-btn">🌙</button>
+
+            <div id="menuIcon" onclick="toggleMenu()">☰</div>
+
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="booking.html" onclick="closeMenu()">Pesan Tiket</a>
+            <a href="cek.html" onclick="closeMenu()">Cek Transaksi</a>
+            <a href="dashboard.html" onclick="closeMenu()">Dashboard</a>
+            <a href="tiket.html" onclick="closeMenu()">Tiket Saya</a>
+            <a href="scan.html" onclick="closeMenu()">Scan Tiket</a>
+            <a href="about.html" onclick="closeMenu()">About</a>
+            <a href="login.html" onclick="closeMenu()">Login</a>
+            <a href="regrister.html" onclick="closeMenu()">Daftar</a>
+            <a href="cs.html" onclick="closeMenu()">Costumer Service</a>
+        </div>
+
+    </nav>
+
+    <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <div class="main-container">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <h1>🚆 LRT Henhen Ticket</h1>
+                <p>Pesan tiket dengan cepat, mudah, dan tanpa ribet</p>
+                <button onclick="goBooking()">Pesan Tiket Sekarang</button>
+            </div>
+        </section>
+
+        <section class="statistik">
+
+            <h2>📊 Statistik LRT</h2>
+
+            <div class="stat-container">
+
+                <div class="stat-card blue">
+                    <div class="stat-icon">🎟️</div>
+                    <h3 id="totalTiket">0</h3>
+                    <p>Tiket Terjual</p>
+                </div>
+
+                <div class="stat-card green">
+                    <div class="stat-icon">👤</div>
+                    <h3 id="totalUser">0</h3>
+                    <p>Pengguna</p>
+                </div>
+
+                <div class="stat-card yellow">
+                    <div class="stat-icon">⭐</div>
+                    <h3 id="avgRating">0</h3>
+                    <p>Rating</p>
+                </div>
+
+                <div class="stat-card purple">
+                    <div class="stat-icon">💬</div>
+                    <h3 id="totalReview">0</h3>
+                    <p>Ulasan</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- INFO -->
+        <section class="info">
+
+            <div class="card">
+                <div class="icon">🚆</div>
+                <h3>Cepat</h3>
+                <p>LRT bebas macet dan nyaman.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💳</div>
+                <h3>Mudah</h3>
+                <p>Pemesanan tiket dapat dilakukan secara online.</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📍</div>
+                <h3>Banyak Stasiun</h3>
+                <p>Terhubung dengan berbagai titik di Palembang.</p>
+            </div>
+
+        </section>
+
+        <!-- HIGHLIGHT -->
+        <section class="highlight">
+
+            <h2>Kenapa Pilih LRT?</h2>
+
+            <div class="highlight-box">
+
+                <div class="highlight-card">
+                    <div class="icon">⏱</div>
+                    <h4>Hemat Waktu</h4>
+                    <p>Tidak terjebak macet seperti kendaraan biasa.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="icon">💸</div>
+                    <h4>Harga Terjangkau</h4>
+                    <p>Hanya Rp 10.000 untuk sekali perjalanan.</p>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="icon">🔒</div>
+                    <h4>Aman</h4>
+                    <p>Sistem transportasi modern dan terpercaya.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="jadwal">
+            <div class="jadwal-header">
+                <h2>🕒 Jadwal Keberangkatan</h2>
+                <div id="liveClock" class="live-clock"></div>
+            </div>
+
+            <div class="jadwal-container" id="jadwalContainer"></div>
+
+        </section>
+
+        <!-- ULASAN -->
+        <section class="ulasan">
+
+            <h2>💬 Ulasan Pengguna</h2>
+
+            <div class="ulasan-wrapper">
+                <div id="ulasanContainer" class="ulasan-track"></div>
+            </div>
+
+        </section>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>Tiket LRT</h2>
+                <p>
+                    Pesan tiket LRT Palembang dengan mudah, cepat, dan aman.
+                    Nikmati perjalanan tanpa ribet.
+                </p>
+            </div>
+
+
+            <div class="footer-links">
+                <h4>PETA SITUS</h4>
+                <a href="index.html">Beranda</a>
+                <a href="booking.html">Beli Tiket</a>
+                <a href="login.html">Login Akun</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>RUTE POPULER</h4>
+                <p>Ampera</p>
+                <p>Jakabaring</p>
+                <p>Bandara</p>
+                <p>Asrama Haji</p>
+            </div>
+
+            <div class="footer-help">
+                <h4>BANTUAN</h4>
+                <a href="https://wa.me/6282282196726?text=Halo%20Admin%20LRT%20Palembang,%20saya%20ingin%20bertanya"
+                    target="_blank">
+                    <button class="help-btn">💬 Chat WhatsApp</button>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Tiket LRT Palembang. Semua Hak Cipta.
+        </div>
+
+    </footer>
+
+    <!-- JS -->
+    <script src="java.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadReviews(); // 🔥 sudah sesuai
+        });
+    </script>
+
+    <script>
+
+        /* =========================
+           ULASAN (ANIMASI JALAN)
+        ========================= */
+        function loadUlasan() {
+
+            let reviews = JSON.parse(localStorage.getItem("lrt_reviews")) || [];
+            let container = document.getElementById("ulasanContainer");
+
+            if (!container) return;
+
+            container.innerHTML = "";
+
+            if (reviews.length === 0) {
+                container.innerHTML = "<p>Belum ada ulasan 😢</p>";
+                return;
+            }
+
+            // 🔥 DUPLIKASI BIAR LOOP HALUS
+            let doubleReviews = reviews.concat(reviews);
+
+            doubleReviews.forEach(r => {
+                container.innerHTML += `
+<div class="ulasan-card">
+
+    <div class="ulasan-header">
+        <div class="avatar">
+            ${r.nama ? r.nama.charAt(0).toUpperCase() : "?"}
+        </div>
+
+        <div class="user-info">
+            <div class="top-line">
+                <h4>${r.nama}</h4>
+                <span class="stars">${"⭐".repeat(parseInt(r.rating))}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="ulasan-text">
+        ${r.pesan}
+    </div>
+
+    <div class="ulasan-time">
+        ${r.waktu || ""}
+    </div>
+
+</div>
+`;
+            });
+        }
+
+
+        /* =========================
+           LIVE CHAT (TAMPIL)
+        ========================= */
+        function loadChat() {
+
+            let reviews = JSON.parse(localStorage.getItem("lrt_reviews")) || [];
+            let container = document.getElementById("chatContainer");
+
+            if (!container) return;
+
+            container.innerHTML = "";
+
+            let myName = document.getElementById("chatName").value || "Anonim";
+
+            reviews.forEach(r => {
+
+                let posisi = (r.nama === myName) ? "chat-right" : "chat-left";
+
+                container.innerHTML += `
+        <div class="chat-bubble ${posisi}">
+            <div class="chat-name">${r.nama}</div>
+            <div>${r.pesan}</div>
+            <div class="chat-time">${r.waktu || ""}</div>
+        </div>
+        `;
+            });
+
+            container.scrollTop = container.scrollHeight;
+        }
+
+        /* =========================
+           KIRIM CHAT
+        ========================= */
+        function sendChat() {
+
+            let nama = document.getElementById("chatName").value || "Anonim";
+            let pesan = document.getElementById("chatMessage").value;
+
+            if (pesan.trim() === "") return;
+
+            let reviews = JSON.parse(localStorage.getItem("lrt_reviews")) || [];
+
+            // 🔥 ambil jam sekarang
+            let now = new Date();
+            let jam = now.getHours().toString().padStart(2, "0") + ":" +
+                now.getMinutes().toString().padStart(2, "0");
+
+            reviews.push({
+                nama: nama,
+                pesan: pesan,
+                rating: 5,
+                waktu: jam // 🔥 simpan jam
+            });
+
+            localStorage.setItem("lrt_reviews", JSON.stringify(reviews));
+
+            document.getElementById("chatMessage").value = "";
+
+            loadChat();
+            loadUlasan();
+        }
+
+
+        /* =========================
+           AUTO LOAD
+        ========================= */
+        document.addEventListener("DOMContentLoaded", function () {
+            loadUlasan();
+            loadChat();
+        });
+
+        /* biar terasa live */
+        setInterval(loadChat, 1000);
+
+    </script>
+
+</body>
+
+</html>

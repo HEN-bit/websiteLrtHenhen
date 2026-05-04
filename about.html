@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tentang LRT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="cekUserNavbar()">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">🚆 LRT Ticket</div>
+
+        <div class="nav-right">
+            <div id="userBox" class="userBox" onclick="toggleUserMenu(event)"></div>
+
+            <div id="userDropdown" class="user-dropdown">
+                <div id="dropdownEmail" class="dropdown-header"></div>
+                <a href="dashboard.html">📊 Dashboard</a>
+                <a href="#" onclick="logoutUser()">🚪 Logout</a>
+            </div>
+
+            <!-- DARK MODE -->
+            <button onclick="toggleDarkMode()" class="dark-btn">🌙</button>
+
+            <div id="menuIcon" onclick="toggleMenu()">☰</div>
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="booking.html" onclick="closeMenu()">Pesan Tiket</a>
+            <a href="cek.html" onclick="closeMenu()">Cek Transaksi</a>
+            <a href="dashboard.html" onclick="closeMenu()">Dashboard</a>
+            <a href="tiket.html" onclick="closeMenu()">Tiket Saya</a>
+            <a href="scan.html" onclick="closeMenu()">Scan Tiket</a>
+            <a href="about.html" onclick="closeMenu()">About</a>
+            <a href="login.html" onclick="closeMenu()">Login</a>
+            <a href="regrister.html" onclick="closeMenu()">Daftar</a>
+            <a href="cs.html" onclick="closeMenu()">Costumer Service</a>
+        </div>
+
+    </nav>
+
+    <!-- CONTENT -->
+    <section class="about">
+
+        <h1>🚆 Tentang LRT Palembang</h1>
+
+        <!-- HERO IMAGE -->
+        <div class="about-hero">
+            <img src="lrt33.jpeg" alt="LRT Palembang">
+        </div>
+
+        <p class="about-text">
+            Light Rail Transit (LRT) Palembang adalah sistem transportasi modern pertama di Indonesia
+            yang dibangun untuk menunjang mobilitas masyarakat secara cepat, nyaman, dan efisien.
+        </p>
+
+        <!-- SEJARAH -->
+        <div class="about-row fade-up">
+
+            <div class="about-img">
+                <img src="lrt4.jpg" alt="Sejarah LRT">
+            </div>
+
+            <div class="about-content">
+                <h2>📖 Sejarah & Awal Mula</h2>
+                <p>
+                    Pembangunan dimulai tahun 2015 untuk Asian Games 2018.
+                    LRT resmi beroperasi pada 2018 dan menjadi yang pertama di Indonesia.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- ALASAN -->
+        <div class="about-row reverse fade-up">
+
+            <div class="about-img">
+                <img src="lrt5.jpg" alt="Transportasi">
+            </div>
+
+            <div class="about-content">
+                <h2>❓ Mengapa LRT Dibangun?</h2>
+                <ul>
+                    <li>Mengurangi kemacetan</li>
+                    <li>Menekan polusi udara</li>
+                    <li>Transportasi cepat & efisien</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- TUJUAN -->
+        <div class="about-row fade-up">
+
+            <div class="about-img">
+                <img src="lrt6.jpg" alt="Tujuan LRT">
+            </div>
+
+            <div class="about-content">
+                <h2>🎯 Tujuan LRT</h2>
+                <ul>
+                    <li>Meningkatkan transportasi publik</li>
+                    <li>Mendukung mobilitas masyarakat</li>
+                    <li>Mendorong ekonomi & pariwisata</li>
+                    <li>Ramah lingkungan</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="java.js"></script>
+
+</body>
+
+</html>

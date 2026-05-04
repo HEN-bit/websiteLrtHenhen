@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bantuan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">🚆 LRT Ticket</div>
+
+        <div class="nav-right">
+
+            <div id="userBox" class="userBox" onclick="toggleUserMenu(event)"></div>
+
+            <div id="userDropdown" class="user-dropdown">
+                <div id="dropdownEmail" class="dropdown-header"></div>
+                <a href="dashboard.html">📊 Dashboard</a>
+                <a href="#" onclick="logoutUser()">🚪 Logout</a>
+            </div>
+
+            <button onclick="toggleDarkMode()" class="dark-btn">🌙</button>
+
+            <div id="menuIcon" onclick="toggleMenu()">☰</div>
+
+        </div>
+
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="booking.html" onclick="closeMenu()">Pesan Tiket</a>
+            <a href="cek.html" onclick="closeMenu()">Cek Transaksi</a>
+            <a href="dashboard.html" onclick="closeMenu()">Dashboard</a>
+            <a href="tiket.html" onclick="closeMenu()">Tiket Saya</a>
+            <a href="scan.html" onclick="closeMenu()">Scan Tiket</a>
+            <a href="about.html" onclick="closeMenu()">About</a>
+            <a href="login.html" onclick="closeMenu()">Login</a>
+            <a href="regrister.html" onclick="closeMenu()">Daftar</a>
+            <a href="cs.html" onclick="closeMenu()">Costumer Service</a>
+        </div>
+
+    </nav>
+
+    <div id="menuOverlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <section class="cs">
+
+        <h2>📞 Pusat Bantuan</h2>
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    🎫 Bagaimana cara pesan tiket?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Pilih menu Pesan Tiket, isi data perjalanan, lalu lakukan pembayaran.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    ❌ Apakah tiket bisa dibatalkan?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Untuk saat ini tiket tidak dapat dibatalkan setelah pembayaran.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    📱 Bagaimana cara scan tiket?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Buka menu Scan Tiket lalu arahkan QR ke scanner di stasiun.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- HELP BOX -->
+        <div class="help-box">
+            <h3>💬 Butuh Bantuan Lebih?</h3>
+            <p>Tim kami siap membantu kamu kapan saja</p>
+            <a href="https://wa.me/6282282196726" target="_blank">
+                <button>Chat WhatsApp</button>
+            </a>
+        </div>
+
+    </section>
+
+    
+    <!-- JS -->
+    <script src="java.js"></script>
+
+</body>
+
+</html>
